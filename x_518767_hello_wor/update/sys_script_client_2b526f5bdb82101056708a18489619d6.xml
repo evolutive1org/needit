@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>u_request_type</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>NeedIt Request Type Options</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+   if (isLoading || newValue === '') {
+      return;
+   }
+var whatneeded = g_form.getValue('u_what_needed');
+	g_form.clearOptions('u_what_needed');
+   
+	if(newValue == 'hr') {
+		g_form.addOption('u_what_needed', 'hr1', 'Human Resources 1');
+	}
+	if(newValue == 'facilities') {
+		g_form.addOption('u_what_needed', 'facilities1', 'Facilities 1');
+	}
+	if(newValue == 'legal') {
+		g_form.addOption('u_what_needed', 'legal1', 'Legal 1 TEST');
+	}
+	if(newValue == 'it') {
+		g_form.addOption('u_what_needed', 'it1', 'IT 1');
+	}
+	if(isLoading && !g_form.isNewRecord()) {
+		g_form.setValue('u_what_needed', whatneeded);
+	}
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-07-22 12:20:01</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>2b526f5bdb82101056708a18489619d6</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>NeedIt Request Type Options</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Hello World" source="x_518767_hello_wor">caa0ea13db02101056708a1848961958</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Hello World">caa0ea13db02101056708a1848961958</sys_scope>
+        <sys_update_name>sys_script_client_2b526f5bdb82101056708a18489619d6</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-07-22 12:20:35</sys_updated_on>
+        <table>x_518767_hello_wor_needit</table>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>
